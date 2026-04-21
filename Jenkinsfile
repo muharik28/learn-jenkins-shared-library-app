@@ -7,6 +7,17 @@ pipeline {
     agent any
     
     stages {
+        stage('Hello Person') {
+            steps {
+                script {
+                    hello.person([
+                        firstName: "Ahmad"
+                        lastName: "Muharik Al Ansori"
+                    ])
+                }
+            }
+        }
+
         stage('Maven Build') {
             steps {
                 script {
