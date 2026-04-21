@@ -4,9 +4,17 @@ import mim.jenkins.Output
 
 pipeline {
 
-    agent none
+    agent any
     
     stages {
+        stage('Maven Build') {
+            steps {
+                script {
+                    maven('clean compile')
+                }
+            }
+        }
+
         stage('Global Variable') {
             steps {
                 script {
